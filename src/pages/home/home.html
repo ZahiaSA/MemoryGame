@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Jeu de cartes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <!---Grille de 3 clones de 4 lignes chacune-->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor="let card of cardDeck ; let pos=index">
+        <!--creation d'une class css -->
+        <img src="{{card.activeImage }}" class="card" (click)="pickCard(card, pos)">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
